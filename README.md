@@ -15,3 +15,5 @@ The goals / steps of this project are the following:
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
 
 sgsfgd
+
+from local
