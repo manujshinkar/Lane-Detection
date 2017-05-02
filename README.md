@@ -85,19 +85,16 @@ I verified that my perspective transform was working as expected by drawing the 
 
 The code for this is in cell 10th of lane_detection.ipynb
 
-Thresholded warped image
+##### Thresholded warped image
 ![alt text][image5]
 
-
-Histogram of pixels
+##### Histogram of pixels
 ![alt text][image6]
 
-
-Lane line detection using sliding window
+##### Lane line detection using sliding window
 ![alt text][image7]
 
-
-Lane line detection on new image using information from previous frame
+##### Lane line detection on new image using information from previous frame
 ![alt text][image8]
 
 #### Calculation the radius of curvature of the lane and the position of the vehicle with respect to center
@@ -120,6 +117,10 @@ Here's a [link to my video result](./project_video_output.mp4)
 
 ### Discussion
 
-#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+In this project the most critical part was to fetch lane infomation from a given image under different light conditions. I initially tried using gradient on image which were in RGB color space. I was loosing some lanes in test images. Later I tried to explore the HSV and HLS color spaces. I foound out that the lanes are sumch more visoble in S channel in the HSV color space. In the final implementation I used a combination of gradient and color thresholding to get the best results in different light conditions. I did not test my implemetation in very dark light conditions in which I expect my implementation to fail. 
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+After getting the lane pixels, I use a second degree polynmial to fit and get lane lines. I could use a cubic or higher degree polynomial to get better results.
+
+If I were to implement this in a real car, I would try to get longer lane lines. I would also try to use data from mpas so that I can see futher ahead.
+
+
