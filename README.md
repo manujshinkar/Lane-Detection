@@ -17,7 +17,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./images/undistort_output.png "Undistorted"
-[image2]: ./test_images/test1.jpg "Road Transformed"
+[image2]: ./images/undistorted.png "Road Transformed"
 [image3]: ./images/gradient_threshold.png "Binary Example"
 [image4]: ./images/warped.png "Warp Example"
 [image5]: ./images/threshold_warped.png "Thresholded Warped"
@@ -85,16 +85,19 @@ I verified that my perspective transform was working as expected by drawing the 
 
 The code for this is in cell 10th of lane_detection.ipynb
 
-Thresholded warped image:
+Thresholded warped image
 ![alt text][image5]
 
-Histogram of pixels:
+
+Histogram of pixels
 ![alt text][image6]
 
-Lane line detection using sliding window:
+
+Lane line detection using sliding window
 ![alt text][image7]
 
-Lane line detection on new image using information from previous frame:
+
+Lane line detection on new image using information from previous frame
 ![alt text][image8]
 
 #### Calculation the radius of curvature of the lane and the position of the vehicle with respect to center
