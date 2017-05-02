@@ -20,9 +20,12 @@ The goals / steps of this project are the following:
 [image2]: ./test_images/test1.jpg "Road Transformed"
 [image3]: ./images/gradient_threshold.png "Binary Example"
 [image4]: ./images/warped.png "Warp Example"
-[image5]: ./images/color_fit_lines.jpg "Fit Visual"
-[image6]: ./images/example_output.jpg "Output"
-[video1]: ./project_video.mp4 "Video"
+[image5]: ./images/threshold_warped.png "Thresholded Warped"
+[image6]: ./images/histogram.png "Histogram"
+[image7]: ./images/sliding_window.png "Sliding Window"
+[image8]: ./images/previous_polyfit.png "Previous Polyfit"
+[image9]: ./images/lane_information.png "Lane Information"
+[video1]: ./project_video_output.mp4 "Video"
 
 Camera Calibration
 ---
@@ -78,29 +81,37 @@ I verified that my perspective transform was working as expected by drawing the 
 
 ![alt text][image4]
 
-#### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
+#### Finding lane line pixels and fit a polynomial 
 
-Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
+The code for this is in cell 10th of lane_detection.ipynb
 
+Thresholded warped image:
 ![alt text][image5]
 
-#### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
-
-I did this in lines # through # in my code in `my_other_file.py`
-
-#### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
-
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
-
+Histogram of pixels:
 ![alt text][image6]
+
+Lane line detection using sliding window:
+![alt text][image7]
+
+Lane line detection on new image using information from previous frame:
+![alt text][image8]
+
+#### Calculation the radius of curvature of the lane and the position of the vehicle with respect to center
+
+I did this in cell 14 of lane_detection.ipynb
+
+#### Example image of the result plotted back down onto the road such that the lane area is identified clearly
+
+I implemented this step in cell 16.  Here is an example of my result on a test image:
+
+![alt text][image9]
 
 ---
 
 ### Pipeline (video)
 
-#### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
-
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](./project_video_output.mp4)
 
 ---
 
